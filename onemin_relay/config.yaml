@@ -1,0 +1,19 @@
+name: 1min Relay
+version: 79968daa373b961e223e5abfe1628ecb7ff2d43a
+slug: onemin_relay
+description: OpenAI-compatible API relay for the 1min.ai API
+url: https://github.com/patrikulus/hassio-addon-1min-relay/tree/main/onemin_relay
+# The upstream image kokofixcomputers/1min-relay is a single multi-arch manifest
+# (amd64 + arm64), so no {arch} placeholder is used in the image name.
+arch:
+  - aarch64
+  - amd64
+image: kokofixcomputers/1min-relay
+init: false
+boot: auto
+startup: application
+host_network: false
+ports:
+  "5001/tcp": 5001
+ports_description:
+  "5001/tcp": OpenAI-compatible API endpoint (append /v1 in your client)
